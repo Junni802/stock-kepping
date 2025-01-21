@@ -28,4 +28,23 @@ public class StockService {
         // 갱신된 값을 저장
         stockRepository.save(stock.get());
     }
+
+    /**
+     * @Transaction 어노테이션은 제거하고
+     * synchronized 메서드 를 사용한다.
+     *
+     * @param id
+     * @param quantity
+     */
+//    public synchronized void decrease(Long id, Long quantity) {
+//        // Stock 조회
+//        Optional<Stock> stock = stockRepository.findById(id);
+//
+//        // 재고 감소
+//        stock.orElseThrow(() -> new RuntimeException("해당하는 재고가 없습니다."))
+//            .decrease(quantity);
+//
+//        // 갱신된 값을 저장
+//        stockRepository.save(stock.get());
+//    }
 }
